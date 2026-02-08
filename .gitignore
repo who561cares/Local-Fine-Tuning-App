@@ -1,0 +1,10 @@
+# Android / Gradle
+**/.gradle/
+**/build/
+
+# Local config
+local.properties
+
+# OS junk
+.DS_Store
+Thumbs.db

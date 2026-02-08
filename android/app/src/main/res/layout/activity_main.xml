@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/tabTrain"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Train" />
+        <Button
+            android:id="@+id/tabMerge"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Merge" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FineTuneMobile"
+                android:textSize="18sp" />
+
+            <!-- Train tab content -->
+            <LinearLayout
+                android:id="@+id/trainSection"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnPickModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick model (.gguf/.bin/.tflite)" />
+
+                <Button
+                    android:id="@+id/btnPickData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick dataset (json/jsonl/csv or image folder zip)" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Training settings" />
+
+                <EditText
+                    android:id="@+id/inputEpochs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Epochs (default 2)" />
+
+                <EditText
+                    android:id="@+id/inputBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Batch size (default 4)" />
+
+                <EditText
+                    android:id="@+id/inputThreads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Max CPU threads (default 1)" />
+
+                <Button
+                    android:id="@+id/btnStartTrain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start on-device LoRA finetune" />
+
+            </LinearLayout>
+
+            <!-- Merge tab content -->
+            <LinearLayout
+                android:id="@+id/mergeSection"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnPickAdapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick LoRA adapter (.bin)" />
+
+                <Button
+                    android:id="@+id/btnPickBaseModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick base model (.gguf)" />
+
+                <EditText
+                    android:id="@+id/inputMergeOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Output path (optional)" />
+
+                <Button
+                    android:id="@+id/btnStartMerge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Merge adapter into model" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

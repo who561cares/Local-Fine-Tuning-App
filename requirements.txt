@@ -1,0 +1,9 @@
+tensorflow-cpu
+numpy
+pandas
+Pillow
+tqdm
+# Optional: for advanced LoRA merging (uncomment as needed)
+# llama-cpp-python>=0.2.0  # For model loading and tensor merge
+# torch>=2.0.0  # For PyTorch-based merge operations
+# gguf>=0.4.0  # For GGUF format handling

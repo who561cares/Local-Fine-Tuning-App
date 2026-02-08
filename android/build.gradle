@@ -1,0 +1,6 @@
+// Android project-level build.gradle
+// NOTE: Plugin resolution happens in settings.gradle (AGP 8+)
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
